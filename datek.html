@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wspieraj Mateusza Kopaczewskiego</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Inter', sans-serif;
+            background:
+            radial-gradient(circle at top,#2563eb 0%,#0f172a 45%);
+            color:white;
+            min-height:100vh;
+            overflow-x:hidden;
+        }
+
+        .bg{
+            position:fixed;
+            inset:0;
+            background:
+            linear-gradient(rgba(15,23,42,0.85),
+            rgba(15,23,42,0.96)),
+            url("mistrz.jpg");
+            background-size:cover;
+            background-position:center;
+            filter:blur(14px);
+            transform:scale(1.1);
+            z-index:-1;
+        }
+
+        .container{
+            max-width:1200px;
+            margin:auto;
+            padding:40px;
+        }
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:60px;
+        }
+
+        .logo{
+            font-size:30px;
+            font-weight:800;
+            letter-spacing:2px;
+        }
+
+        .back{
+            text-decoration:none;
+            color:white;
+            background:rgba(255,255,255,0.08);
+            padding:14px 22px;
+            border-radius:16px;
+            transition:0.25s;
+            backdrop-filter:blur(10px);
+        }
+
+        .back:hover{
+            background:rgba(255,255,255,0.15);
+        }
+
+        .hero{
+            display:flex;
+            align-items:center;
+            gap:60px;
+            flex-wrap:wrap;
+        }
+
+        .left{
+            flex:1;
+            min-width:320px;
+        }
+
+        .tag{
+            display:inline-block;
+            background:#2563eb;
+            padding:8px 16px;
+            border-radius:999px;
+            font-size:14px;
+            margin-bottom:25px;
+            font-weight:600;
+        }
+
+        h1{
+            font-size:72px;
+            line-height:1;
+            margin-bottom:25px;
+            font-weight:800;
+        }
+
+        .gradient{
+            background:linear-gradient(90deg,#60a5fa,#93c5fd,#ffffff);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        .opis{
+            color:#cbd5e1;
+            font-size:19px;
+            line-height:1.9;
+            margin-bottom:35px;
+            max-width:700px;
+        }
+
+        .quote{
+            background:rgba(255,255,255,0.05);
+            border-left:4px solid #3b82f6;
+            padding:25px;
+            border-radius:20px;
+            color:#dbeafe;
+            line-height:1.8;
+            margin-bottom:35px;
+            backdrop-filter:blur(10px);
+        }
+
+        .buttons{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            border:none;
+            padding:18px 30px;
+            border-radius:18px;
+            cursor:pointer;
+            font-size:17px;
+            font-weight:700;
+            transition:0.25s;
+        }
+
+        .main-btn{
+            background:#2563eb;
+            color:white;
+            box-shadow:0 10px 30px rgba(37,99,235,0.35);
+        }
+
+        .main-btn:hover{
+            transform:translateY(-5px);
+            box-shadow:0 15px 40px rgba(37,99,235,0.45);
+        }
+
+        .second-btn{
+            background:rgba(255,255,255,0.08);
+            color:white;
+            backdrop-filter:blur(10px);
+        }
+
+        .second-btn:hover{
+            background:rgba(255,255,255,0.15);
+        }
+
+        .right{
+            flex:1;
+            display:flex;
+            justify-content:center;
+        }
+
+        .card{
+            width:420px;
+            background:rgba(15,23,42,0.75);
+            border:1px solid rgba(255,255,255,0.06);
+            border-radius:35px;
+            padding:35px;
+            backdrop-filter:blur(15px);
+            box-shadow:0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .card img{
+            width:100%;
+            border-radius:25px;
+            margin-bottom:25px;
+        }
+
+        .card h2{
+            font-size:35px;
+            margin-bottom:15px;
+        }
+
+        .card p{
+            color:#cbd5e1;
+            line-height:1.7;
+            margin-bottom:25px;
+        }
+
+        .progress-box{
+            margin-bottom:25px;
+        }
+
+        .progress-top{
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:10px;
+            color:#dbeafe;
+        }
+
+        .progress{
+            width:100%;
+            height:14px;
+            background:rgba(255,255,255,0.08);
+            border-radius:999px;
+            overflow:hidden;
+        }
+
+        .progress-bar{
+            width:0%;
+            height:100%;
+            background:linear-gradient(90deg,#3b82f6,#60a5fa);
+        }
+
+        .donate-btn{
+            width:100%;
+            padding:18px;
+            border:none;
+            border-radius:18px;
+            background:#2563eb;
+            color:white;
+            font-size:18px;
+            font-weight:700;
+            cursor:pointer;
+            transition:0.25s;
+        }
+
+        .donate-btn:hover{
+            transform:scale(1.03);
+        }
+
+        .support{
+            margin-top:80px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+        }
+
+        .support-card{
+            background:rgba(255,255,255,0.05);
+            padding:30px;
+            border-radius:25px;
+            backdrop-filter:blur(10px);
+            transition:0.25s;
+        }
+
+        .support-card:hover{
+            transform:translateY(-8px);
+            background:rgba(255,255,255,0.08);
+        }
+
+        .support-card h3{
+            font-size:40px;
+            color:#60a5fa;
+            margin-bottom:10px;
+        }
+
+        .support-card p{
+            color:#cbd5e1;
+            line-height:1.7;
+        }
+
+        footer{
+            text-align:center;
+            margin-top:80px;
+            color:#94a3b8;
+            padding-bottom:30px;
+        }
+
+        @media(max-width:900px){
+
+            h1{
+                font-size:48px;
+            }
+
+            .container{
+                padding:20px;
+            }
+
+            .card{
+                width:100%;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bg"></div>
+
+    <div class="container">
+
+        <nav>
+
+            <div class="logo">
+                MK Racing
+            </div>
+
+            <a href="index.html" class="back">
+                Powrót
+            </a>
+
+        </nav>
+
+        <section class="hero">
+
+            <div class="left">
+
+                <div class="tag">
+                    Wspieraj rozwój kierowcy
+                </div>
+
+                <h1>
+                    Pomóż zamienić
+                    <span class="gradient">
+                        pasję w przyszłość.
+                    </span>
+                </h1>
+
+                <p class="opis">
+                    Za każdym szybkim okrążeniem stoją godziny treningów,
+                    presja, poświęcenie i ogromne koszty.
+                    Każde wsparcie pomaga rozwijać talent,
+                    startować w kolejnych wyścigach
+                    i walczyć o coraz większe cele.
+                </p>
+
+                <div class="quote">
+                    „Nie każdy może zostać kierowcą wyścigowym.
+                    Ale każdy może stać się częścią tej historii.”
+                </div>
+
+                <div class="buttons">
+
+                    <button class="btn main-btn"
+                    onclick="donate()">
+                        Wesprzyj teraz
+                    </button>
+
+                    <button class="btn second-btn">
+                        Zobacz historię
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="right">
+
+                <div class="card">
+
+                    <img src="mistrz.jpg" alt="Mateusz Kopaczewski">
+
+                    <h2>
+                        Cel sezonu 2026
+                    </h2>
+
+                    <p>
+                        Zbiórka na kolejne starty,
+                        treningi oraz rozwój sprzętu wyścigowego.
+                    </p>
+
+                    <div class="progress-box">
+
+                        <div class="progress-top">
+                            <span>0 zł</span>
+                            <span>30 000 zł</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+
+                    </div>
+
+                    <button class="donate-btn"
+                    onclick="donate()">
+                        Przekaż datek
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="support">
+
+            <div class="support-card">
+                <h3>🏁</h3>
+
+                <p>
+                    Każda wpłata przybliża do kolejnych wyścigów
+                    i walki o podium.
+                </p>
+            </div>
+
+            <div class="support-card">
+                <h3>🔥</h3>
+
+                <p>
+                    Wspierasz prawdziwą pasję,
+                    determinację i rozwój młodego kierowcy.
+                </p>
+            </div>
+
+            <div class="support-card">
+                <h3>⚡</h3>
+
+                <p>
+                    Twoje wsparcie staje się częścią historii,
+                    która dopiero się zaczyna.
+                </p>
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 • Mateusz Kopaczewski • MK Racing
+        </footer>
+
+    </div>
+
+    <script>
+
+        function donate(){
+
+            alert("Tutaj później podepniesz link do płatności 💙");
+
+        }
+
+    </script>
+
+</body>
+</html>

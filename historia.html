@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mateusz Kopaczewski — Narodziny Bestii Toru</title>
+
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Inter', sans-serif;
+            background:
+            radial-gradient(circle at top, #1e3a8a 0%, #0f172a 40%);
+            color:white;
+            min-height:100vh;
+            overflow-x:hidden;
+        }
+
+        .bg{
+            position:fixed;
+            inset:0;
+            background:
+            linear-gradient(rgba(15,23,42,0.7),
+            rgba(15,23,42,0.95)),
+            url("mistrz.jpg");
+            background-size:cover;
+            background-position:center;
+            filter:blur(10px);
+            transform:scale(1.1);
+            z-index:-1;
+        }
+
+        .container{
+            max-width:1200px;
+            margin:auto;
+            padding:30px;
+        }
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:40px;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:800;
+            letter-spacing:2px;
+        }
+
+        .menu{
+            background:rgba(255,255,255,0.08);
+            padding:12px;
+            border-radius:12px;
+            cursor:pointer;
+            backdrop-filter:blur(10px);
+        }
+
+        .hero{
+            display:flex;
+            align-items:center;
+            gap:50px;
+            margin-top:40px;
+            flex-wrap:wrap;
+        }
+
+        .hero-left{
+            flex:1;
+            min-width:300px;
+        }
+
+        .tag{
+            display:inline-block;
+            background:#2563eb;
+            padding:8px 15px;
+            border-radius:999px;
+            font-size:14px;
+            margin-bottom:20px;
+            font-weight:600;
+        }
+
+        .hero h1{
+            font-size:70px;
+            line-height:1;
+            margin-bottom:25px;
+            font-weight:800;
+        }
+
+        .gradient{
+            background:linear-gradient(90deg,#60a5fa,#3b82f6,#93c5fd);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        .opis{
+            color:#cbd5e1;
+            font-size:18px;
+            line-height:1.8;
+            max-width:650px;
+        }
+
+        .buttons{
+            margin-top:35px;
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            padding:16px 28px;
+            border:none;
+            border-radius:16px;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.25s;
+            font-weight:600;
+        }
+
+        .btn-main{
+            background:#2563eb;
+            color:white;
+        }
+
+        .btn-main:hover{
+            transform:translateY(-4px);
+            box-shadow:0 10px 30px rgba(37,99,235,0.4);
+        }
+
+        .btn-second{
+            background:rgba(255,255,255,0.08);
+            color:white;
+            backdrop-filter:blur(10px);
+        }
+
+        .btn-second:hover{
+            background:rgba(255,255,255,0.15);
+        }
+
+        .hero-right{
+            flex:1;
+            display:flex;
+            justify-content:center;
+        }
+
+        .photo{
+            width:420px;
+            border-radius:30px;
+            overflow:hidden;
+            box-shadow:0 20px 60px rgba(0,0,0,0.5);
+            border:3px solid rgba(255,255,255,0.08);
+        }
+
+        .photo img{
+            width:100%;
+            display:block;
+        }
+
+        .story{
+            margin-top:70px;
+            background:rgba(15,23,42,0.75);
+            border:1px solid rgba(255,255,255,0.05);
+            padding:50px;
+            border-radius:30px;
+            backdrop-filter:blur(12px);
+        }
+
+        .story h2{
+            font-size:40px;
+            margin-bottom:25px;
+        }
+
+        .story p{
+            color:#cbd5e1;
+            line-height:2;
+            font-size:18px;
+            margin-bottom:20px;
+        }
+
+        .stats{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:25px;
+            margin-top:50px;
+        }
+
+        .card{
+            background:rgba(255,255,255,0.05);
+            padding:30px;
+            border-radius:25px;
+            backdrop-filter:blur(12px);
+            transition:0.25s;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+            background:rgba(255,255,255,0.08);
+        }
+
+        .card h3{
+            font-size:45px;
+            margin-bottom:10px;
+            color:#60a5fa;
+        }
+
+        .card p{
+            color:#cbd5e1;
+        }
+
+        footer{
+            text-align:center;
+            margin-top:70px;
+            color:#94a3b8;
+            padding-bottom:30px;
+        }
+
+        @media(max-width:900px){
+
+            .hero h1{
+                font-size:45px;
+            }
+
+            .photo{
+                width:100%;
+            }
+
+            .container{
+                padding:20px;
+            }
+
+            .story{
+                padding:30px;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bg"></div>
+
+    <div class="container">
+
+        <nav>
+
+            <div class="logo">
+                MK Racing
+            </div>
+
+            <div class="menu">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </div>
+
+        </nav>
+
+        <section class="hero">
+
+            <div class="hero-left">
+
+                <div class="tag">
+                    Kierowca • RaceFacer • Motorsport
+                </div>
+
+                <h1>
+                    Chłopak, który
+                    <span class="gradient">
+                        zamienił adrenalinę
+                    </span>
+                    w obsesję zwyciężania.
+                </h1>
+
+                <p class="opis">
+                    Mateusz Kopaczewski nie ścigał się dla zabawy.
+                    Od pierwszego wejścia na tor wiedział,
+                    że prędkość będzie czymś więcej niż hobby.
+                    Każde okrążenie stało się walką z czasem,
+                    stresem i własnymi limitami.
+                    Dziś buduje nazwisko,
+                    które coraz częściej pojawia się na szczycie tabel wyników.
+                </p>
+
+                <div class="buttons">
+
+                    <button class="btn btn-main"
+                    onclick="pokaz()">
+                        Historia kierowcy
+                    </button>
+
+                    <button class="btn btn-second">
+                        Wyniki RaceFacer
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="hero-right">
+
+                <div class="photo">
+                    <img src="mistrz.jpg" alt="Mateusz Kopaczewski">
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="stats">
+
+            <div class="card">
+                <h3>3</h3>
+                <p>Wyścigi</p>
+            </div>
+
+            <div class="card">
+                <h3>2</h3>
+                <p>Zwycięstwa</p>
+            </div>
+
+            <div class="card">
+                <h3>57.014</h3>
+                <p>Najlepsze okrążenie</p>
+            </div>
+
+            <div class="card">
+                <h3>TOP 1</h3>
+                <p>Mentalność</p>
+            </div>
+
+        </section>
+
+        <section class="story">
+
+            <h2>
+                Historia, która zaczęła się od jednego zakrętu.
+            </h2>
+
+            <p>
+                Wszystko zaczęło się niewinnie.
+                Jeden wypad na tor.
+                Kilka okrążeń.
+                Zwykła ciekawość.
+            </p>
+
+            <p>
+                Ale kiedy inni schodzili z toru zmęczeni,
+                Mateusz chciał jeszcze jedno okrążenie.
+                Jeszcze jeden start.
+                Jeszcze jedną próbę pobicia czasu.
+            </p>
+
+            <p>
+                Z czasem przestało chodzić o samą jazdę.
+                Chodziło o perfekcję.
+                O moment,
+                w którym samochód,
+                kierowca i adrenalina działają jak jeden organizm.
+            </p>
+
+            <p>
+                Każdy przejazd budował charakter.
+                Każda porażka zwiększała głód zwycięstwa.
+                Każdy tor stawał się miejscem,
+                gdzie powstawała kolejna wersja samego siebie.
+            </p>
+
+            <p>
+                Dzisiaj Mateusz Kopaczewski nie jest już tylko kierowcą.
+                To nazwisko,
+                które zaczyna kojarzyć się z determinacją,
+                szybkością i chłodną głową pod presją.
+            </p>
+
+        </section>
+
+        <footer>
+            © 2026 • Mateusz Kopaczewski • MK Racing
+        </footer>
+
+    </div>
+
+    <script>
+
+        function pokaz(){
+
+            alert("To dopiero początek historii 🔥");
+
+        }
+
+    </script>
+
+</body>
+</html>
